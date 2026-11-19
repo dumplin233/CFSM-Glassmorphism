@@ -127,6 +127,13 @@ describe('首页窗口按探测目标分组（BUG-001 回归）', () => {
     expect(stylesheet).toContain('.node-probe__bars .is-gap')
     expect(stylesheet).toContain('.node-probe__bars .is-empty')
   })
+
+  it('首页分别为联通、电信、移动绘制独立延迟和丢包序列', () => {
+    expect(serverCard).toContain("const networks = ['cu', 'ct', 'cm'] as const")
+    expect(serverCard).toContain('windowAverage(props.server.history.latencySeries, probe.target)')
+    expect(serverCard).toContain('windowAverage(props.server.history.packetLossSeries, probe.target)')
+    expect(serverCard).toContain('v-for="row in probeRows"')
+  })
 })
 
 describe('首页保留 node_1～node_4 探测目标（BUG-002 回归）', () => {

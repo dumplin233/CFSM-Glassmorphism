@@ -2032,6 +2032,13 @@ a {
   line-height: 1;
 }
 
+.node-probe__network {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+}
+
 /*
  * 上游延迟 / 丢包面板的数值是 `<span class="font-medium">`：**500**，且**没有**
  * `tabular-nums`，颜色也走继承的 foreground。这里此前写成 600 + tabular-nums，
